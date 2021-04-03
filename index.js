@@ -4,9 +4,8 @@ import router from './routes/router.js'
 
 const app = express();
 
-// createDB();
-
 // Conectar la base de datos
+
 db.authenticate()
     .then(() => console.log("Base de datos conectada"))
     .catch(error => console.log(error))
