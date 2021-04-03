@@ -1,0 +1,23 @@
+extends ./layout/index
+
+block contenido
+    section.section-center
+        h2 to-do app
+        h3 Folders
+        // list
+        .list-container.show-container
+            .item-list
+                each folder in folders
+                    article.list-item
+                        a(href=`/${folder.id}`).title #{folder.nombre}
+                        .btn-container
+                            a(href=`/${folder.id}/delete`) 
+                                button.delete-btn(type='button')
+                                    i.fas.fa-trash
+            //- button.clear-btn clear items
+        // form
+        form(action="/", method="POST").todo-form
+            p.alert
+            .form-control
+                input#item(type='text' placeholder='New Folder', name="folder")
+                button.submit-btn(type='submit') submit

@@ -1,0 +1,28 @@
+extends ./layout/index
+
+block contenido
+    section.section-center
+        h3
+            a(href="/") Folders 
+            | > #{folder}
+        // list
+        .list-container.show-container
+            .item-list
+                each tarea in tareas
+                    article(data-id=`${tarea.id}`).list-item
+                        label 
+                            input(type="checkbox", name="")
+                            | #{tarea.tarea}
+                        .btn-container
+                            // delete btn
+                            a(href=`/${id_folder}/${tarea.id}`) 
+                                button.delete-btn(type='button')
+                                    i.fas.fa-trash
+            //- button.clear-btn clear items
+        // form
+        form(action=`/${id_folder}`, method="POST").todo-form
+            p.alert
+            .form-control
+                input#item(type='text' placeholder='New Task', name="item")
+                input(type="hidden", name="id_folder", value=`${id_folder}`)
+                button.submit-btn(type='submit') submit
