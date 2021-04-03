@@ -15,3 +15,4 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 Para que funcione correctamente la aplicación, modificar los valores de configuracion para la base de datos en el archivo `variables.env`.
 
+Una vez ejecutado el script `run.sh` la aplicación será visible en la url `127.0.0.1:4000`
