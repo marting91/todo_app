@@ -11,8 +11,7 @@ block contenido
                 each tarea in tareas
                     article(data-id=`${tarea.id}`).list-item
                         label 
-                            input(type="checkbox", name="")
-                            | #{tarea.tarea}
+                            p.title #{tarea.tarea}
                         .btn-container
                             // delete btn
                             a(href=`/${id_folder}/${tarea.id}`) 
